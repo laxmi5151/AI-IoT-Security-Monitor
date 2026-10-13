@@ -107,4 +107,9 @@ The available automated checks completed in the project environment:
 A Streamlit `AppTest` run did not complete within the available timeout, and the environment blocked a localhost HTTP health check. Therefore interactive navigation through every page and a browser-level launch are not claimed as verified here. The primary model rejects the compact saved flow CSV because it lacks the required CIC-IDS features; the UI reports this limitation instead of fabricating a prediction.
 
 Gemini was not successfully connected during this validation. The configured model is `gemini-3.8-flash`; a single minimal request failed with a provider/service-unavailable category. No successful response was received, so the UI must remain `Connection failed`; deterministic local help remains available. The model identifier is listed in Google's current model documentation, but a listed model and configured key do not prove that a particular account can use it.
+## Team Members
 
+1. Laxmi Agarwal
+2. Gulshan Shekhawat
+3. Khushnuma
+4. Lovely Saini
