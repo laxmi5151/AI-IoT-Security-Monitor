@@ -1,0 +1,167 @@
+{
+  "experiment": "grouped-capture file holdout v1; candidate only, not selected by the app",
+  "random_state": 42,
+  "sampling": {
+    "per_file_maximum": 10000,
+    "chunk_rows": 25000,
+    "method": "deterministic sample of up to 1000 records per CSV chunk"
+  },
+  "preprocessing": {
+    "drop": [
+      "Label",
+      "target",
+      "Flow ID",
+      "Source IP",
+      "Destination IP",
+      "Timestamp"
+    ],
+    "numeric_conversion": "errors to NaN",
+    "missing_and_infinite": "replace/fill with zero",
+    "constant_features_removed_using_training_data_only": true,
+    "scaler": null
+  },
+  "training_files": [
+    "Friday-WorkingHours-Afternoon-PortScan.pcap_ISCX.csv",
+    "Friday-WorkingHours-Morning.pcap_ISCX.csv",
+    "Monday-WorkingHours.pcap_ISCX.csv",
+    "Thursday-WorkingHours-Afternoon-Infilteration.pcap_ISCX.csv",
+    "Thursday-WorkingHours-Morning-WebAttacks.pcap_ISCX.csv",
+    "Wednesday-workingHours.pcap_ISCX.csv"
+  ],
+  "training_samples": 55000,
+  "training_class_counts": {
+    "BENIGN": 41936,
+    "ATTACK": 13064
+  },
+  "feature_count": 70,
+  "validation": {
+    "dataset": "validation",
+    "files": [
+      "Tuesday-WorkingHours.pcap_ISCX.csv"
+    ],
+    "sample_count": 10000,
+    "class_counts": {
+      "BENIGN": 9567,
+      "ATTACK": 433
+    },
+    "confusion_matrix_actual_rows_predicted_columns": [
+      [
+        9441,
+        126
+      ],
+      [
+        407,
+        26
+      ]
+    ],
+    "false_positive_rate": 0.01317027281279398,
+    "per_class": {
+      "BENIGN": {
+        "precision": 0.9586718115353371,
+        "recall": 0.9868297271872061,
+        "f1": 0.9725469997424672,
+        "support": 9567
+      },
+      "ATTACK": {
+        "precision": 0.17105263157894737,
+        "recall": 0.06004618937644342,
+        "f1": 0.08888888888888889,
+        "support": 433
+      }
+    },
+    "classification_report": {
+      "BENIGN": {
+        "precision": 0.9586718115353371,
+        "recall": 0.9868297271872061,
+        "f1-score": 0.9725469997424672,
+        "support": 9567.0
+      },
+      "ATTACK": {
+        "precision": 0.17105263157894737,
+        "recall": 0.06004618937644342,
+        "f1-score": 0.08888888888888889,
+        "support": 433.0
+      },
+      "accuracy": 0.9467,
+      "macro avg": {
+        "precision": 0.5648622215571423,
+        "recall": 0.5234379582818247,
+        "f1-score": 0.530717944315678,
+        "support": 10000.0
+      },
+      "weighted avg": {
+        "precision": 0.9245679010432255,
+        "recall": 0.9467,
+        "f1-score": 0.9342846035425073,
+        "support": 10000.0
+      }
+    },
+    "roc_auc": 0.9156970253066317
+  },
+  "test": {
+    "dataset": "held-out capture file",
+    "files": [
+      "Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv"
+    ],
+    "sample_count": 9745,
+    "class_counts": {
+      "BENIGN": 4597,
+      "ATTACK": 5148
+    },
+    "confusion_matrix_actual_rows_predicted_columns": [
+      [
+        4594,
+        3
+      ],
+      [
+        1892,
+        3256
+      ]
+    ],
+    "false_positive_rate": 0.0006525995214270176,
+    "per_class": {
+      "BENIGN": {
+        "precision": 0.7082947887758249,
+        "recall": 0.999347400478573,
+        "f1": 0.8290174140575657,
+        "support": 4597
+      },
+      "ATTACK": {
+        "precision": 0.9990794722307457,
+        "recall": 0.6324786324786325,
+        "f1": 0.7745926014035922,
+        "support": 5148
+      }
+    },
+    "classification_report": {
+      "BENIGN": {
+        "precision": 0.7082947887758249,
+        "recall": 0.999347400478573,
+        "f1-score": 0.8290174140575657,
+        "support": 4597.0
+      },
+      "ATTACK": {
+        "precision": 0.9990794722307457,
+        "recall": 0.6324786324786325,
+        "f1-score": 0.7745926014035922,
+        "support": 5148.0
+      },
+      "accuracy": 0.8055413032324269,
+      "macro avg": {
+        "precision": 0.8536871305032853,
+        "recall": 0.8159130164786027,
+        "f1-score": 0.801805007730579,
+        "support": 9745.0
+      },
+      "weighted avg": {
+        "precision": 0.861907877583001,
+        "recall": 0.8055413032324269,
+        "f1-score": 0.8002663688505205,
+        "support": 9745.0
+      }
+    },
+    "roc_auc": 0.9175455251972545
+  },
+  "limitations": "Metrics apply only to deterministic sampled rows from the named held-out capture files; they are not production or real-network effectiveness claims.",
+  "artifact_sha256": "b30dc01800d63354cbb02d64a5c31aef3e9ba4dc2e29e09c19ef7484f0d16cd2"
+}

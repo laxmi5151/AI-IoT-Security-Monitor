@@ -1,0 +1,42 @@
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Local environments, caches, temporary output, and recovery copies
+.venv/
+venv/
+__pycache__/
+.pytest_cache/
+backups/
+app_backup_python files/
+*.tmp
+*.log
+*.bak
+*.backup-*
+*_backup.py
+*.swp
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Local databases and WAL files may contain user/device history
+*.sqlite
+*.sqlite3
+*.sqlite3-shm
+*.sqlite3-wal
+*.db
+
+# Full CIC-IDS CSVs are large (some exceed GitHub's 100 MiB file limit).
+# Keep the working copies locally; the app uses its saved models/captures.
+dataset/*.csv
+MachineLearningCVE/*.csv
+
+# Raw packet captures are local demo/training inputs; processed features are kept.
+captures/*.pcap*
+iot_simulator/data/training/*.pcap*
+
+# Bundled Wireshark binaries are not required by this project
+Wireshark/
+*.py[cod]

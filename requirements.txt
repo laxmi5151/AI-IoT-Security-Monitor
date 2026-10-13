@@ -1,0 +1,15 @@
+# Runtime packages already used by the application
+streamlit>=1.40,<2
+pandas>=2.1,<3
+numpy>=1.26,<3
+scikit-learn>=1.4,<2
+joblib>=1.3,<2
+plotly>=5.18,<7
+scapy>=2.5,<3
+python-dotenv>=1.0,<2
+
+# Optional hosted assistant provider (the local fallback works without it)
+google-genai>=1.0,<2
+
+# Development and automated tests
+pytest>=8,<9
